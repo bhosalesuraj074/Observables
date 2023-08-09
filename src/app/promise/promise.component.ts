@@ -11,12 +11,13 @@ export class PromiseComponent implements OnInit {
   ngOnInit() {}
   fetchData() {
     this.data = 'Fetching data...';
-    return setTimeout(() => {
+    let res = setTimeout(() => {
       fetch('https://jsonplaceholder.typicode.com/users')
         .then((res) => res.json())
         .then((res) => (this.data = JSON.stringify(res)))
         .catch((res) => (this.data = 'failed to load data try again'));
     }, 3000);
-    console.log('hello');
+    console.log('hello ji');
+    return res;
   }
 }
