@@ -1,0 +1,12 @@
+.brand {
+  color: rgb(211, 60, 60);
+  font-weight: 500;
+}
+
+.bgcolor {
+  background-color: #cfbdf0;
+}
+
+.active {
+  color: coral;
+}
