@@ -73,6 +73,7 @@ export class PromiseComponent implements OnInit {
     }, 3000);
   }
 
+  // 3. by using the api fetching the external data by using Api endpoint
   fetchApiData() {
     this.fetchapi = 'fetching data...';
     fetch('https://jsonplaceholder.typicode.com/users')
