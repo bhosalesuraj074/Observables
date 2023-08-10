@@ -1,0 +1,9 @@
+.myframe {
+  height: 100%;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 2%;
+}
+.myDiv {
+  height: 500px;
+}
