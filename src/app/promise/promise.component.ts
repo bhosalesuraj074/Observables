@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class PromiseComponent implements OnInit {
   constructor() {}
   data: any;
-  asyncData: any;
+  asyncdata: any;
+  fetchapi: any;
   ngOnInit() {}
 
   dell = {
@@ -18,14 +19,16 @@ export class PromiseComponent implements OnInit {
   };
   hp = {
     brand: 'hp',
-    status: false,
+    status: true,
     color: 'silver',
   };
   notAvailable = {
     brand: '',
     status: 'Laptop not avilable',
   };
+
   promiseData() {
+    console.log('Hello');
     let promise = new Promise((resolve, reject) => {
       if (this.dell.status) {
         resolve(this.dell);
@@ -37,38 +40,44 @@ export class PromiseComponent implements OnInit {
     });
     return promise;
   }
-  fetchData() {
+  // 1. this for the promise operation
+  asyncData() {
     this.data = 'Fetching data...';
-    // let res = setTimeout(() => {
-    //   fetch('https://jsonplaceholder.typicode.com/users')
-    //     .then((res) => res.json())
-    //     .then((res) => (this.data = JSON.stringify(res)))
-    //     .catch((res) => (this.data = 'failed to load data try again'));
-    // }, 3000);
-    // console.log('hello ji');
-    // //return res;
-    setTimeout(() => {
-      let a = this.promiseData();
-      a.then((res) => {
-        console.log('Then Data', res);
-      });
-      a.catch((res) => {
-        console.log('catch data', res);
-      });
-    }, 3000);
+    setTimeout(
+      () =>
+        this.promiseData()
+          .then((res) => {
+            console.log('Then Data', res);
+            this.data = JSON.stringify(res);
+          })
+          .catch((res) => {
+            console.log('catch data', res);
+            this.data = JSON.stringify(res);
+          }),
+      3000
+    );
   }
 
+  // 2. this for the async / await operation
   async getAsyncData() {
-    this.asyncData = 'Fatching data...';
+    this.asyncdata = 'Fatching data...';
     let res = setTimeout(() => {
-      fetch('https://jsonplaceholder.typicode.com/todos/1001')
+      fetch('https://jsonplaceholder.typicode.com/todos/10')
         .then((res) => res.json())
-        .then((res) => (this.asyncData = JSON.stringify(res)))
+        .then((res) => (this.asyncdata = JSON.stringify(res)))
         .catch(
           (res) =>
-            (this.asyncData =
+            (this.asyncdata =
               'requested data is not available : ' + JSON.stringify(res))
         );
     }, 3000);
+  }
+
+  fetchApiData() {
+    this.fetchapi = 'fetching data...';
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((res) => (this.fetchapi = JSON.stringify(res)))
+      .catch((res) => (this.fetchapi = 'data is not available'));
   }
 }

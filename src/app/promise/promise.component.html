@@ -5,21 +5,29 @@
   <div class="row">
     <div class="col-md-4 border" style="word-wrap: break-word; ">
       <strong>Promises</strong><br /><br />
-      <button class="btn btn-success" (click)="fetchData()">Fetch Data</button>
+      <button class="btn btn-success" (click)="asyncData()">Fetch Data</button>
       <div *ngIf="data" class="mt-3">
         {{ data }}
       </div>
     </div>
-    <div class="col-md-4 border">
+    <div class="col-md-4 border" style="word-wrap: break-word; ">
       <strong>async/awit</strong><br /><br />
       <button class="btn btn-success" (click)="getAsyncData()">
         Fetch Data
       </button>
 
-      <div *ngIf="asyncData">{{ asyncData }}</div>
+      <div *ngIf="asyncdata" class="mt-3">
+        {{ asyncdata }}
+      </div>
     </div>
-    <div class="col-md-4 border">
-      <strong>fetch</strong>
+    <div class="col-md-4 border" style="word-wrap: break-word; ">
+      <strong>fetch</strong><br /><br />
+      <button class="btn btn-success" (click)="fetchApiData()">
+        Fetch Data
+      </button>
+      <div *ngIf="fetchapi" class="mt-3">
+        {{ fetchapi }}
+      </div>
     </div>
   </div>
 </div>
