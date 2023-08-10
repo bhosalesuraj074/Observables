@@ -3,17 +3,22 @@
   <hr />
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 border" style="word-wrap: break-word; ">
       <strong>Promises</strong><br /><br />
       <button class="btn btn-success" (click)="fetchData()">Fetch Data</button>
       <div *ngIf="data" class="mt-3">
         {{ data }}
       </div>
     </div>
-    <div class="col-md-4">
-      <strong>async/awit</strong>
+    <div class="col-md-4 border">
+      <strong>async/awit</strong><br /><br />
+      <button class="btn btn-success" (click)="getAsyncData()">
+        Fetch Data
+      </button>
+
+      <div *ngIf="asyncData">{{ asyncData }}</div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 border">
       <strong>fetch</strong>
     </div>
   </div>
