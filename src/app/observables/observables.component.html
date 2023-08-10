@@ -2,3 +2,18 @@
   <h4 class="text-center">Observables</h4>
   <hr />
 </div>
+<div class="container">
+  <div class="col-md-4">
+    <input
+      type="text"
+      placeholder="enter the number"
+      class="form-control mb-3"
+    />
+    <button class="btn btn-success">Add</button>
+    <div class="mt-4">
+      <ng-container *ngFor="let item of numberArr">
+        <p>{{ item }}</p>
+      </ng-container>
+    </div>
+  </div>
+</div>
