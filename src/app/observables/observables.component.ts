@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-observables',
@@ -8,25 +8,26 @@ import { Observable } from 'rxjs';
 })
 export class ObservablesComponent implements OnInit, OnDestroy {
   myObj: Observable<string> | undefined;
-
+  unSub!: Subscription;
   constructor() {}
 
   ngOnInit() {
     this.myObj = new Observable((obserever) => {
       obserever.next('Suraj');
       obserever.next('Akash');
+
       // this may breake the streaming the data
       // .'. obserever.error('hello');
-
       obserever.next('Shubham');
 
+      // Stream complete
       obserever.complete();
     });
 
     // Subscribing the obervables
-    this.myObj.subscribe(
-      (res) => {
-        console.log(res);
+    this.unSub = this.myObj.subscribe(
+      (next) => {
+        console.log(next);
       },
       (error) => {
         console.log('Error => ', error);
@@ -37,8 +38,8 @@ export class ObservablesComponent implements OnInit, OnDestroy {
     );
   }
 
-
   ngOnDestroy(): void {
-   
-    }
+    console.log('Observable Distroed');
+    this.unSub.unsubscribe();
+  }
 }
