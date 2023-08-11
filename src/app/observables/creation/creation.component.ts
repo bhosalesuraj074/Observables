@@ -18,4 +18,7 @@ export class CreationComponent implements OnInit {
       console.log('of operator res =>', res);
     });
   }
+  fromOperator(){
+    
+  }
 }
