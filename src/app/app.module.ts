@@ -14,8 +14,10 @@ const routes: Route[] = [
   { path: 'promises', component: PromiseComponent },
   {
     path: 'observables',
-    component: ObservablesComponent,
-    children: [{ path: 'creation', component: CreationComponent }],
+    children: [
+      { path: '', component: ObservablesComponent },
+      { path: 'creation', component: CreationComponent },
+    ],
   },
   { path: 'task', component: TaskComponent },
   { path: '**', redirectTo: 'home' },
