@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObservablesComponent implements OnInit {
   constructor() {}
-  numberArr: number[] = [14, 9, 8, 15, 3, 67];
-  ngOnInit() {}
+ 
+  ngOnInit() {
+    //this.
+  }
+
 }

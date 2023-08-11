@@ -1,0 +1,21 @@
+<div class="container">
+  <h4 class="text-center">Task</h4>
+  <hr />
+</div>
+
+<div class="container">
+  <div class="col-md-4">
+    <input
+      type="text"
+      placeholder="enter the number"
+      class="form-control mb-3"
+      #element
+    />
+    <button class="btn btn-success" (click)="addElement(element.value)">
+      Add
+    </button>
+  </div>
+  <div class="mt-4" *ngFor="let item of numberArr">
+    <p>{{ item }}</p>
+  </div>
+</div>

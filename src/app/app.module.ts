@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { PromiseComponent } from './promise/promise.component';
+import { TaskComponent } from './task/task.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'promises', component: PromiseComponent },
   { path: 'observables', component: ObservablesComponent },
+  { path: 'task', component: TaskComponent },
   { path: '**', redirectTo: 'home' },
 ];
 
@@ -21,6 +23,7 @@ const routes: Route[] = [
     HomeComponent,
     PromiseComponent,
     ObservablesComponent,
+    TaskComponent,
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule],
