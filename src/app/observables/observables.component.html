@@ -1,40 +1,27 @@
 <div class="container">
   <h4 class="text-center">Observables</h4>
   <hr />
-  <div class="container mt-4">
-    <h4 class="mb-5">🫧 <u>Creation operators</u></h4>
-    <div class="row">
-      <!-- **********  card for the of operator ********** -->
+  <h4 class="mb-5">🪄<u>Types of Operator</u></h4>
+  <div class="row">
+    <!-- *--------------------------------------------------* -->
 
+    <div class="col-md-6">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">of operator</h5>
+          <h4 class="card-title">Creation operator</h4>
           <p class="card-text">
-            <b>of</b> operator is a creation operator used to create an
-            observable that emit a sequence of values that you provided as arg.
+            <b>creaation operator </b>in RxJS are used to create observables
+            from various data sources or event. They provide a way to start and
+            manage observable streams.
           </p>
-          <button class="btn btn-primary" (click)="ofOperator()">
-            of operator👉
-          </button>
+          <button class="btn btn-primary">of operator👉</button>
         </div>
       </div>
+    </div>
+    <!-- *--------------------------------------------------* -->
 
-      <!-- *--------------------------------------------------* -->
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">of operator</h5>
-          <p class="card-text">
-            <b>of</b> operator is a creation operator used to create an
-            observable that emit a sequence of values that you provided as arg.
-          </p>
-          <button class="btn btn-primary" (click)="ofOperator()">
-            of operator👉
-          </button>
-        </div>
-      </div>
-
-      <!-- *--------------------------------------------------* -->
+    <div class="col-md-6">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-<router-outlet></router-outlet>
