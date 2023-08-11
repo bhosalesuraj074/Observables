@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of, Subscription } from 'rxjs';
 
 @Component({
@@ -7,13 +8,15 @@ import { Observable, of, Subscription } from 'rxjs';
   styleUrls: ['./observables.component.css'],
 })
 export class ObservablesComponent implements OnInit, OnDestroy {
- 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
   // creation operator : of operator
-  
 
   ngOnDestroy(): void {}
+
+  callOf(call: string) {
+    this.router.navigateByUrl('/observables/creation');
+  }
 }
