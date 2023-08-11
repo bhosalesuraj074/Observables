@@ -38,6 +38,11 @@ export class ObservablesComponent implements OnInit, OnDestroy {
     );
   }
 
+  // creation operator : of operator
+  ofOperator() {
+    console.log('Creation Operator: of');
+  }
+
   ngOnDestroy(): void {
     console.log('Observable Distroed');
     this.unSub.unsubscribe();
