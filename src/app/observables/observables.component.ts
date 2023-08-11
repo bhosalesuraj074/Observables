@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-observables',
@@ -7,44 +7,19 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./observables.component.css'],
 })
 export class ObservablesComponent implements OnInit, OnDestroy {
-  myObj: Observable<string> | undefined;
-  unSub!: Subscription;
+  arr = [1, 2, 3, 345];
   constructor() {}
 
-  ngOnInit() {
-    this.myObj = new Observable((obserever) => {
-      obserever.next('Suraj');
-      obserever.next('Akash');
-
-      // this may breake the streaming the data
-      // .'. obserever.error('hello');
-      obserever.next('Shubham');
-
-      // Stream complete
-      obserever.complete();
-    });
-
-    // Subscribing the obervables
-    this.unSub = this.myObj.subscribe(
-      (next) => {
-        console.log(next);
-      },
-      (error) => {
-        console.log('Error => ', error);
-      },
-      () => {
-        console.log('Stream is complete');
-      }
-    );
-  }
+  ngOnInit() {}
 
   // creation operator : of operator
   ofOperator() {
-    console.log('Creation Operator: of');
+    console.log('---- Creation Operator: of ----');
+    let observable = of(this.arr);
+    observable.subscribe((res) => {
+      console.log('of operator res =>', res);
+    });
   }
 
-  ngOnDestroy(): void {
-    console.log('Observable Distroed');
-    this.unSub.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 }
