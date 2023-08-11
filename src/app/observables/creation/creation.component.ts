@@ -7,7 +7,7 @@ import { of } from 'rxjs';
   styleUrls: ['./creation.component.css'],
 })
 export class CreationComponent implements OnInit {
-  arr = [1, 2, 3, 345];
+  arr = 1;
   constructor() {}
 
   ngOnInit() {}
