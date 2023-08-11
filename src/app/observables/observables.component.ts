@@ -17,6 +17,6 @@ export class ObservablesComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {}
 
   callOf() {
-    this.router.navigate(['creation']);
+    this.router.navigateByUrl('creation');
   }
 }

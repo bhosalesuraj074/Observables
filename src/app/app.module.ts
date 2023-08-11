@@ -14,8 +14,9 @@ const routes: Route[] = [
   { path: 'promises', component: PromiseComponent },
   {
     path: 'observables',
+    component: ObservablesComponent,
     children: [
-      { path: '', component: ObservablesComponent },
+      // { path: '', component: ObservablesComponent },
       { path: 'creation', component: CreationComponent },
     ],
   },
