@@ -54,9 +54,17 @@ export class CreationComponent implements OnInit {
   fromEventOperator() {
     console.log('---- Creation Operator: fromEvent ----');
     let fromEventObservable = fromEvent(this.Mybutton?.nativeElement, 'click');
-    fromEventObservable.subscribe((res) => {
-      console.log('Responce', res);
-    });
-    
+    // console.log(fromEventObservable);
+    fromEventObservable.subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        console.log('stram completed');
+      }
+    );
   }
 }
