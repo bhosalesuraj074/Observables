@@ -20,7 +20,7 @@
     </div>
     <!-- *********************************************** -->
     <!-- **********  card for the from operator ********** -->
-    <!-- this is for the of operator -->
+    <!-- this is for the from operator -->
     <div class="card mb-4" style="width: 18rem;">
       <div>
         <div class="card-body">
@@ -31,6 +31,28 @@
             Observable-like object.
           </p>
           <button class="btn btn-primary" (click)="fromOperator()">
+            from operator👉
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+
+    <!-- **********  card for the from operator ********** -->
+    <!-- this is for the from operator -->
+    <div class="card mb-4" style="width: 18rem;">
+      <div>
+        <div class="card-body">
+          <h4 class="card-title">fromEvent operator</h4>
+          <p class="card-text">
+            <b>fromEvent</b> operator is a creation operator that allows you to
+            convert DOM events or other event sources into observables.
+          </p>
+          <button
+            class="btn btn-primary"
+            #fromEvent
+            (click)="fromEventOperator()"
+          >
             from operator👉
           </button>
         </div>

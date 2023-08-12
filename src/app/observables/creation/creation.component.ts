@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { from, Observable, of } from 'rxjs';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { from, fromEvent, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-creation',
@@ -8,9 +8,15 @@ import { from, Observable, of } from 'rxjs';
 })
 export class CreationComponent implements OnInit {
   arr = 1;
+  // for the fromEvent
+  @ViewChild('fromEvent')
+  Mybutton: ElementRef | undefined;
   constructor() {}
 
   ngOnInit() {}
+
+  // Creation opertor
+  // 1. of operator
   ofOperator() {
     console.log('---- Creation Operator: of ----');
     let observable = of(this.arr);
@@ -18,6 +24,8 @@ export class CreationComponent implements OnInit {
       console.log('of operator res => ', res);
     });
   }
+
+  // 2. from operator
   fromOperator() {
     console.log('---- Creation Operator: from ----');
     let fromCollection = new Promise((resolve, reject) => {
@@ -40,5 +48,15 @@ export class CreationComponent implements OnInit {
         console.log('stream complete');
       }
     );
+  }
+
+  //3 fromEvent operator
+  fromEventOperator() {
+    console.log('---- Creation Operator: fromEvent ----');
+    let fromEventObservable = fromEvent(this.Mybutton?.nativeElement, 'click');
+    fromEventObservable.subscribe((res) => {
+      console.log('Responce', res);
+    });
+    
   }
 }
