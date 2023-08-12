@@ -9,7 +9,7 @@ import { from, Observable, of } from 'rxjs';
 export class CreationComponent implements OnInit {
   arr = 1;
   fromCollection = ['suraj', 1, 'Shubham'];
-  constructor() {}
+  constructor() {} 
 
   ngOnInit() {}
   ofOperator() {
