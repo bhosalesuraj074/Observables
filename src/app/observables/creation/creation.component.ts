@@ -12,7 +12,7 @@ export class CreationComponent implements OnInit {
   constructor() {} 
 
   ngOnInit() {}
-  ofOperator() {
+  ofOperator() { 
     console.log('---- Creation Operator: of ----');
     let observable = of(this.arr);
     observable.subscribe((res) => {
