@@ -9,8 +9,8 @@ import { from, fromEvent, Observable, of } from 'rxjs';
 export class CreationComponent implements OnInit {
   arr = 1;
   // for the fromEvent
-  @ViewChild('fromEvent')
-  Mybutton: ElementRef | undefined;
+  @ViewChild('Mybutton')
+  Mybutton!: ElementRef;
   constructor() {}
 
   ngOnInit() {}
@@ -53,18 +53,18 @@ export class CreationComponent implements OnInit {
   //3 fromEvent operator
   fromEventOperator() {
     console.log('---- Creation Operator: fromEvent ----');
-    let fromEventObservable = fromEvent(this.Mybutton?.nativeElement, 'click');
-    // console.log(fromEventObservable);
+    let fromEventObservable = fromEvent(this.Mybutton.nativeElement, 'click');
+
+    //by using template varibale
     fromEventObservable.subscribe(
-      (res) => {
-        console.log(res);
+      (next) => {
+        console.log(next);
       },
       (error) => {
         console.log(error);
       },
       () => {
         console.log('stram completed');
-      }
-    );
+      });
   }
 }
