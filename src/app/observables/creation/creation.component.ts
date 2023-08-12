@@ -8,11 +8,10 @@ import { from, Observable, of } from 'rxjs';
 })
 export class CreationComponent implements OnInit {
   arr = 1;
-  fromCollection = ['suraj', 1, 'Shubham'];
-  constructor() {} 
+  constructor() {}
 
   ngOnInit() {}
-  ofOperator() { 
+  ofOperator() {
     console.log('---- Creation Operator: of ----');
     let observable = of(this.arr);
     observable.subscribe((res) => {
@@ -21,9 +20,25 @@ export class CreationComponent implements OnInit {
   }
   fromOperator() {
     console.log('---- Creation Operator: from ----');
-    let fromObservable: Observable<string | number> = from(this.fromCollection);
-    fromObservable.subscribe((res) => {
-      console.log(res);
+    let fromCollection = new Promise((resolve, reject) => {
+      let a = 22;
+      if (a % 2 == 0) {
+        resolve('resolved number -> ' + a);
+      } else {
+        reject('rejectd number -> ' + a);
+      }
     });
+    let fromObservable = from(fromCollection);
+    fromObservable.subscribe(
+      (res) => {
+        console.log('responce =>', res);
+      },
+      (error) => {
+        console.log('error in promise=>', error);
+      },
+      () => {
+        console.log('stream complete');
+      }
+    );
   }
 }
