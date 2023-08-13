@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { of } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-filtering',
@@ -9,22 +9,21 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./filtering.component.css'],
 })
 export class FilteringComponent implements OnInit {
-  myFrom!: FormGroup;
-  constructor() {}
-
-  ngOnInit() {
-    this.myFrom = new FormGroup({
-      search: new FormControl(),
+  myForm!: FormGroup;
+  constructor() {
+    this.myForm = new FormGroup({
+      search: new FormControl(''),
     });
   }
 
-  // debounceTimeOperator
-  debounceTimeOperator(value: string) {
-    let observable = of(value);
-    observable.pipe(debounceTime(10000)).subscribe((res) => {
-      console.log(value);
-    });
+  ngOnInit() {}
 
-    this.myFrom.get('search');
+  // debounceTimeOperator
+  debounceTimeOperator() {
+    this.myForm.controls['search'].valueChanges
+      .pipe(debounceTime(3000), take(2))
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
 }
