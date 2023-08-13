@@ -72,12 +72,9 @@ export class CreationComponent implements OnInit {
   // 4. interval operator
   intervalOperator() {
     console.log('---- Creation Operator: interval ----');
-    let obs1 = of([1, 235, 345, 4, 2345, 6]);
-    obs1.subscribe((obs: any) => {
-      let intervalObs = interval(500);
-      intervalObs.subscribe((res) => {
-        console.log(obs * res);
-      });
+    let intervalObs = interval(500);
+    intervalObs.subscribe((res) => {
+      console.log(res);
     });
   }
 }
