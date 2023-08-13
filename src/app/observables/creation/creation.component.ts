@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { from, fromEvent, Observable, of } from 'rxjs';
+import { from, fromEvent, Observable, of, interval } from 'rxjs';
 
 @Component({
   selector: 'app-creation',
@@ -65,6 +65,19 @@ export class CreationComponent implements OnInit {
       },
       () => {
         console.log('stram completed');
+      }
+    );
+  }
+
+  // 4. interval operator
+  intervalOperator() {
+    console.log('---- Creation Operator: interval ----');
+    let obs1 = of([1, 235, 345, 4, 2345, 6]);
+    obs1.subscribe((obs: any) => {
+      let intervalObs = interval(500);
+      intervalObs.subscribe((res) => {
+        console.log(obs * res);
       });
+    });
   }
 }
