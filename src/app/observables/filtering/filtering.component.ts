@@ -8,18 +8,21 @@ import { debounceTime, from, interval } from 'rxjs';
   styleUrls: ['./filtering.component.css'],
 })
 export class FilteringComponent implements OnInit {
-  myForm!: FormGroup;
-  constructor() {
-    this.myForm = new FormGroup({
-      search: new FormControl('ss', Validators.required),
+  myFrom!: FormGroup;
+  constructor() {}
+
+  ngOnInit() {
+    this.myFrom = new FormGroup({
+      demo: new FormControl(),
     });
   }
 
-  ngOnInit() {}
-
   // debounceTimeOperator
   debounceTimeOperator() {
-    console.log('---- filtering Operator: debounceTime ----');
-    this.myForm.get();
+    console.log(this.myFrom.get('demo'));
+    // this.search.valueChanges.pipe(debounceTime(100)).subscribe((res) => {
+    //   console.log('---- filtering Operator: debounceTime ----');
+    //   console.log(this.search.value);
+    // });
   }
 }

@@ -12,12 +12,11 @@
             observable only after a perticular time span has passed without
             another source emission.
           </p>
-          <div [formGroup]="myForm">
+          <div class="myForm" [formGroup]="myFrom">
             <input
               type="text"
               name="search"
-              class="from-control"
-              fromControlName="search"
+              fromControlName="demo"
               placeholder="search here"
               (keyup)="debounceTimeOperator()"
             />
