@@ -4,25 +4,23 @@
     <!-- **********  card for the of operator ********** -->
     <!-- this is for the of operator -->
     <div class="card mb-4" style="width: 18rem;">
-      <div>
-        <div class="card-body">
-          <h4 class="card-title">debounceTime operator</h4>
-          <p class="card-text">
-            <b>debounceTime</b> operator emit a notification from the source
-            observable only after a perticular time span has passed without
-            another source emission.
-          </p>
-          <form class="" [formGroup]="myFrom">
-            <input
-              type="text"
-              name="ss"
-              fromControlName="search"
-              placeholder="search here"
-              #search
-              (keyup)="debounceTimeOperator(search.value)"
-            />
-          </form>
-        </div>
+      <div class="card-body">
+        <h4 class="card-title">debounceTime operator</h4>
+        <p class="card-text">
+          <b>debounceTime</b> operator emit a notification from the source
+          observable only after a perticular time span has passed without
+          another source emission.
+        </p>
+        <form class="" [formGroup]="myFrom">
+          <input
+            type="text"
+            name="ss"
+            fromControlName="search"
+            placeholder="search here"
+            #search
+            (keyup)="debounceTimeOperator(search.value)"
+          />
+        </form>
       </div>
     </div>
     <!-- *********************************************** -->

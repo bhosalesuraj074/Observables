@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {  of } from 'rxjs';
+import { of } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -24,5 +24,7 @@ export class FilteringComponent implements OnInit {
     observable.pipe(debounceTime(10000)).subscribe((res) => {
       console.log(value);
     });
+
+    this.myFrom.get('search');
   }
 }
