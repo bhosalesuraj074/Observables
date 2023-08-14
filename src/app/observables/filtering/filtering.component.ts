@@ -123,4 +123,5 @@ export class FilteringComponent implements OnInit {
       console.log(res);
     });
   }
+  // 11. count Operator
 }
