@@ -3,7 +3,7 @@
   <div class="row">
     <!-- **********  card for the debounceTime operator ********** -->
     <!-- this is for the of operator -->
-    <div class="card mb-4" style="width: 18rem;">
+    <div class="card mb-4" style="width: 24rem;">
       <div class="card-body">
         <h4 class="card-title">debounceTime operator</h4>
         <p class="card-text">
@@ -28,7 +28,7 @@
     <!-- *********************************************** -->
     <!-- **********  card for the take operator ********** -->
     <!-- this is for the take operator -->
-    <div class="card mb-4" style="width: 18rem;">
+    <div class="card mb-4" style="width: 24rem;">
       <div class="card-body">
         <h4 class="card-title">take operator</h4>
         <p class="card-text">
@@ -42,10 +42,9 @@
       </div>
     </div>
     <!-- *********************************************** -->
-    <!-- *********************************************** -->
     <!-- **********  card for the takeWhile operator ********** -->
     <!-- this is for the takeWhile operator -->
-    <div class="card mb-4" style="width: 18rem;">
+    <div class="card mb-4" style="width: 24rem;">
       <div class="card-body">
         <h4 class="card-title">takeWhile operator</h4>
         <p class="card-text">
@@ -55,6 +54,121 @@
         </p>
         <button class="btn btn-primary" (click)="takeWhileOperator()">
           takeWhile operator👉
+        </button>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+
+    <!-- *********************************************** -->
+    <!-- **********  card for the takeLast operator ********** -->
+    <!-- this is for the takeLast operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div class="card-body">
+        <h4 class="card-title">takeLast operator</h4>
+        <p class="card-text">
+          <b>takeLast</b> operator take the last N emmited by the observable
+          where 'N' is specified count
+        </p>
+        <button class="btn btn-primary" (click)="takeLastOperator()">
+          takeLast operator👉
+        </button>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+
+    <!-- **********  card for the first operator ********** -->
+    <!-- this is for the first operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div class="card-body">
+        <h4 class="card-title">first operator</h4>
+        <p class="card-text">
+          <b>first</b> operator emit only the first value that matches the
+          condition and then complete the obsevable.
+        </p>
+        <button class="btn btn-primary" (click)="firstOperator()">
+          first operator👉
+        </button>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+
+    <!-- **********  card for the last operator ********** -->
+    <!-- this is for the last operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div class="card-body">
+        <h4 class="card-title">last operator</h4>
+        <p class="card-text">
+          <b>last</b> operator emit only the last value that matches the
+          condition and then complete the obsevable.
+        </p>
+        <button class="btn btn-primary" (click)="lastOperator()">
+          last operator👉
+        </button>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+
+    <!-- **********  card for the elementAt operator ********** -->
+    <!-- this is for the elementAt operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div class="card-body">
+        <h4 class="card-title">elementAt operator</h4>
+        <p class="card-text">
+          <b>elementAt</b> operator allows you take a specified element at a
+          given given index from the observable
+        </p>
+        <button class="btn btn-primary" (click)="elementAtOperator()">
+          last operator👉
+        </button>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+
+    <!-- **********  card for the filter operator ********** -->
+    <!-- this is for the filter operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div class="card-body">
+        <h4 class="card-title">filter operator</h4>
+        <p class="card-text">
+          <b>filter</b> operator allows to you include only value from the
+          observable that satisfy the condition. it emits value only when the
+          condition is true otherwise it ignore the values
+        </p>
+        <button class="btn btn-primary" (click)="filterOperator()">
+          filter operator👉
+        </button>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+
+    <!-- **********  card for the filter operator ********** -->
+    <!-- this is for the distinct operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div class="card-body">
+        <h4 class="card-title">distinct operator</h4>
+        <p class="card-text">
+          <b>distinct</b> operator allows you to ensure that only unique values
+          are allowed through an observable. it emits value that are unique and
+          ingnore value that have already been emited.
+        </p>
+        <button class="btn btn-primary" (click)="distinctOperator()">
+          distinct operator👉
+        </button>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+    <!-- **********  card for the skip operator ********** -->
+    <!-- this is for the skip operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div class="card-body">
+        <h4 class="card-title">skip operator</h4>
+        <p class="card-text">
+          <b>skip</b> operator allows you to ensure that only unique values
+          are allowed through an observable. it emits value that are unique and
+          ingnore value that have already been emited.
+        </p>
+        <button class="btn btn-primary" (click)="skipOperator()">
+          skip operator👉
         </button>
       </div>
     </div>
