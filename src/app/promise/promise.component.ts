@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-promise',
@@ -28,7 +29,7 @@ export class PromiseComponent implements OnInit {
   };
 
   promiseData() {
-    console.log('Hello');
+    //console.log('Hello');
     let promise = new Promise((resolve, reject) => {
       if (this.dell.status) {
         resolve(this.dell);
