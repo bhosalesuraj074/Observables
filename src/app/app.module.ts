@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CreationComponent } from './observables/creation/creation.component';
 import { FilteringComponent } from './observables/filtering/filtering.component';
+import { JoinComponent } from './observables/join/join.component';
 import { MathematicalComponent } from './observables/mathematical/mathematical.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { PromiseComponent } from './promise/promise.component';
@@ -23,6 +24,7 @@ const routes: Route[] = [
       { path: 'creation', component: CreationComponent },
       { path: 'filter', component: FilteringComponent },
       { path: 'mathematical', component: MathematicalComponent },
+      { path: 'join', component: JoinComponent },
     ],
   },
   { path: 'task', component: TaskComponent },

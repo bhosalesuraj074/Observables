@@ -1,0 +1,63 @@
+<div class="container">
+  <h4 class="mb-5">🫧 <u>Join operators</u></h4>
+  <div class="row">
+    <!-- **********  card for the merge operator ********** -->
+    <!-- this is for the merge operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div>
+        <div class="card-body">
+          <h4 class="card-title">merge operator</h4>
+          <p class="card-text">
+            <b>merge</b> operator combine the multiple observable into a single
+            observable stream it emits all values from all source.
+            <br />
+          </p>
+          <button class="btn btn-primary" (click)="mergeOperator()">
+            merge operator👉
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+    <!-- **********  card for the concat operator ********** -->
+    <!-- this is for the concat operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div>
+        <div class="card-body">
+          <h4 class="card-title">concat operator</h4>
+          <p class="card-text">
+            <b>concat</b> operator concatenates the multiple observable,
+            emitting values sequentially from one observable before moving to
+            the next.
+            <br />
+          </p>
+          <button class="btn btn-primary" (click)="concatOperator()">
+            concat operator👉
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+    <!-- **********  card for the forkJoin operator ********** -->
+    <!-- this is for the forkJoin operator -->
+    <div class="card mb-4" style="width: 24rem;">
+      <div>
+        <div class="card-body">
+          <h4 class="card-title">forkJoin operator</h4>
+          <p class="card-text">
+            <b>forkJoin</b> operator that combine the emission of the multiple
+            observable and wait for all of them to complete before emitting an
+            array of their last value. it's often used when you need to gather
+            the result of multiple observable and process them once they have
+            all completed.
+            <br />
+          </p>
+          <button class="btn btn-primary" (click)="forkJoinOperator()">
+            forkJoin operator👉
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- *********************************************** -->
+  </div>
+</div>
