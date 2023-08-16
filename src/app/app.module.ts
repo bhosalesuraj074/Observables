@@ -12,6 +12,7 @@ import { MathematicalComponent } from './observables/mathematical/mathematical.c
 import { ObservablesComponent } from './observables/observables.component';
 import { TransformationComponent } from './observables/transformation/transformation.component';
 import { PromiseComponent } from './promise/promise.component';
+import { SubjectService } from './services/subject.service';
 import { Comp1Component } from './subject/comp1/comp1.component';
 import { SubjectComponent } from './subject/subject.component';
 import { TaskComponent } from './task/task.component';
@@ -53,5 +54,6 @@ const routes: Route[] = [
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule],
+  providers: [SubjectService],
 })
 export class AppModule {}
