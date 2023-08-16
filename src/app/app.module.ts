@@ -10,6 +10,7 @@ import { FilteringComponent } from './observables/filtering/filtering.component'
 import { JoinComponent } from './observables/join/join.component';
 import { MathematicalComponent } from './observables/mathematical/mathematical.component';
 import { ObservablesComponent } from './observables/observables.component';
+import { TransformationComponent } from './observables/transformation/transformation.component';
 import { PromiseComponent } from './promise/promise.component';
 import { TaskComponent } from './task/task.component';
 
@@ -27,6 +28,7 @@ const routes: Route[] = [
       { path: 'mathematical', component: MathematicalComponent },
       { path: 'join', component: JoinComponent },
       { path: 'error', component: ErrorHandlingComponent },
+      { path: 'tranformation', component: TransformationComponent },
     ],
   },
   { path: 'task', component: TaskComponent },
