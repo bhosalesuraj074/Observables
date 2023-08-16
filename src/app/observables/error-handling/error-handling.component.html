@@ -27,9 +27,8 @@
         <div class="card-body">
           <h4 class="card-title">retry operator</h4>
           <p class="card-text">
-            <b>retry</b> operator allows you to handle errors emitted by an
-            observable and continue the stream with a fallback value or another
-            observable.
+            <b>retry</b> operator allows you to automatically resubscibe to the
+            source observable if an error observable.
             <br />
           </p>
           <button class="btn btn-primary" (click)="retryOperator()">

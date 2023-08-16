@@ -14,10 +14,20 @@ export class ErrorHandlingComponent implements OnInit {
 
   catchErrorOperator() {
     console.log('---- error handling Operator: catchError ----');
-    let observable = of([1, 2, 3, 4]);
-    observable.pipe(map(value)=>{
-        return value *2    ;  
-    });
+    let observable = of(1, 2, 3, 4, 0, 's');
+    observable
+      .pipe(
+        map((value: any) => {
+          return value * 2;
+        }),
+        catchError((error) => {
+          console.log('error', error);
+          return of(-1);
+        })
+      )
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
 
   retryOperator() {
