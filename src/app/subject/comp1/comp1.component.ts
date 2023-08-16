@@ -8,13 +8,10 @@ import { SubjectService } from '../../services/subject.service';
 })
 export class Comp1Component implements OnInit {
   constructor(private subject: SubjectService) {}
-  user: string = '';
+  user: any;
   ngOnInit() {
-    this.subject.userName.next('Suraj');
-    console.log('hello ji');
     this.subject.userName.subscribe((res) => {
-      this.user = res;
-      console.log(this.user);
+      console.log('responce', res);
     });
   }
 }

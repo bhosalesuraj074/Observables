@@ -3,7 +3,9 @@ import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class SubjectService {
-  constructor() {}
+  constructor() {
+    this.userName.next('Suraj');
+  }
 
   userName = new Subject<string>();
 }
