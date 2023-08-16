@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class SubjectService {
-  username = new Subject<string>();
   constructor() {}
+
+  userName = new Subject<string>();
 }

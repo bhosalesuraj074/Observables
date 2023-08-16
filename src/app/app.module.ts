@@ -14,7 +14,6 @@ import { TransformationComponent } from './observables/transformation/transforma
 import { PromiseComponent } from './promise/promise.component';
 import { Comp1Component } from './subject/comp1/comp1.component';
 import { SubjectComponent } from './subject/subject.component';
-import { SubjectService } from './subject/subject.service';
 import { TaskComponent } from './task/task.component';
 
 const routes: Route[] = [
@@ -54,5 +53,5 @@ const routes: Route[] = [
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule],
-}) 
+})
 export class AppModule {}
