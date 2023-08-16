@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { from, fromEvent, interval, of, switchMap } from 'rxjs';
 import { map, mapTo, mergeMap } from 'rxjs/operators';
 @Component({
   selector: 'app-transformation',
@@ -8,6 +8,8 @@ import { map, mapTo, mergeMap } from 'rxjs/operators';
 })
 export class TransformationComponent implements OnInit {
   constructor() {}
+  @ViewChild('switch')
+  button!: ElementRef;
   arr = [1, 2, 3, 4, 5, 6];
   ngOnInit() {}
 
@@ -28,7 +30,22 @@ export class TransformationComponent implements OnInit {
   }
   mergeMapOperator() {
     console.log('---- transformation Operator: mergeMap ----');
-    let observable1 = from([11, 324, 2, 39, 34, 235]);
+    let observable1 = from([1, 2, 3, 4, 5, 6]);
     let observable2 = from(['suraj', 'akash', 'shubham']);
+    let obs = observable1
+      .pipe(
+        mergeMap((value1) =>
+          observable2.pipe(mergeMap((value2) => of(`${value1}${value2}`)))
+        )
+      )
+      .subscribe((res) => {
+        console.log(res);
+      });
+  }
+  switchMapOperator() {
+    const clickObs = fromEvent(this.button.nativeElement, 'click');
+    clickObs.pipe(switchMap((event) => interval(1000))).subscribe((res) => {
+      console.log(res);
+    });
   }
 }
