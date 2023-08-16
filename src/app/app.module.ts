@@ -12,6 +12,9 @@ import { MathematicalComponent } from './observables/mathematical/mathematical.c
 import { ObservablesComponent } from './observables/observables.component';
 import { TransformationComponent } from './observables/transformation/transformation.component';
 import { PromiseComponent } from './promise/promise.component';
+import { Comp1Component } from './subject/comp1/comp1.component';
+import { SubjectComponent } from './subject/subject.component';
+import { SubjectService } from './subject/subject.service';
 import { TaskComponent } from './task/task.component';
 
 const routes: Route[] = [
@@ -31,6 +34,7 @@ const routes: Route[] = [
       { path: 'tranformation', component: TransformationComponent },
     ],
   },
+  { path: 'subject', component: SubjectComponent },
   { path: 'task', component: TaskComponent },
   { path: '**', redirectTo: 'home' },
 ];
@@ -45,6 +49,8 @@ const routes: Route[] = [
     TaskComponent,
     CreationComponent,
     FilteringComponent,
+    SubjectComponent,
+    Comp1Component,
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule],
