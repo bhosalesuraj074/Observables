@@ -21,6 +21,7 @@ export class MathematicalComponent implements OnInit {
   }
 
   reduceOperator() {
+    console.log('---- mathematical Operator: reduce ----');
     let observable = from(this.arr);
     observable
       .pipe(reduce((value, currentValue) => value + currentValue))

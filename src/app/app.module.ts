@@ -5,6 +5,7 @@ import { Route, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CreationComponent } from './observables/creation/creation.component';
+import { ErrorHandlingComponent } from './observables/error-handling/error-handling.component';
 import { FilteringComponent } from './observables/filtering/filtering.component';
 import { JoinComponent } from './observables/join/join.component';
 import { MathematicalComponent } from './observables/mathematical/mathematical.component';
@@ -25,6 +26,7 @@ const routes: Route[] = [
       { path: 'filter', component: FilteringComponent },
       { path: 'mathematical', component: MathematicalComponent },
       { path: 'join', component: JoinComponent },
+      { path: 'error', component: ErrorHandlingComponent },
     ],
   },
   { path: 'task', component: TaskComponent },
