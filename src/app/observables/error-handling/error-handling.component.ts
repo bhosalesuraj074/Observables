@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 @Component({
@@ -14,10 +14,13 @@ export class ErrorHandlingComponent implements OnInit {
 
   catchErrorOperator() {
     console.log('---- error handling Operator: catchError ----');
-    let observable = of(1, 2, 3, 4, 0, 's');
+    let observable = of(1, 2, 3, 4, 0);
     observable
       .pipe(
         map((value: any) => {
+          if (value == 0) {
+            throwError('not allowed');
+          }
           return value * 2;
         }),
         catchError((error) => {
