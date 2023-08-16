@@ -54,5 +54,5 @@ const routes: Route[] = [
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule],
-})
+}) 
 export class AppModule {}
