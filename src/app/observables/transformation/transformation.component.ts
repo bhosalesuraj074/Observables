@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
+import { from, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-transformation',
@@ -8,14 +8,18 @@ import { map } from 'rxjs/operators';
 })
 export class TransformationComponent implements OnInit {
   constructor() {}
-  arr = [1, 2, 3, 4, 5, 6, 6];
+  arr = [1, 2, 3, 4, 5, 6];
   ngOnInit() {}
 
   mapOperator() {
     console.log('---- transformation Operator: map ----');
-    let observable = of(this.arr);
-    observable.pipe(map((value, current) => current * 2)).subscribe((res) => {
+    let observable = from(this.arr);
+    observable.pipe(map((value) => value * 2)).subscribe((res) => {
       console.log(res);
     });
+  }
+
+  mergeMapOperator() {
+    console.log('---- transformation Operator: mergeMap ----');
   }
 }
