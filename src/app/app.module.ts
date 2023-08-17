@@ -13,8 +13,11 @@ import { ObservablesComponent } from './observables/observables.component';
 import { TransformationComponent } from './observables/transformation/transformation.component';
 import { PromiseComponent } from './promise/promise.component';
 import { SubjectService } from './services/subject.service';
-import { SubjectComponent } from './subject/subject.component';
+
 import { TaskComponent } from './task/task.component';
+import { Comp1Component } from './utility/comp1/comp1.component';
+import { Comp2Component } from './utility/comp2/comp2.component';
+import { UtilityComponent } from './utility/utility.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,7 +36,7 @@ const routes: Route[] = [
       { path: 'tranformation', component: TransformationComponent },
     ],
   },
-  { path: 'subject', component: SubjectComponent },
+  { path: 'subject', component: UtilityComponent },
   { path: 'task', component: TaskComponent },
   { path: '**', redirectTo: 'home' },
 ];
@@ -48,7 +51,9 @@ const routes: Route[] = [
     TaskComponent,
     CreationComponent,
     FilteringComponent,
-    SubjectComponent,
+    UtilityComponent,
+    Comp1Component,
+    Comp2Component,
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule],
