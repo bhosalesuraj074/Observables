@@ -10,5 +10,7 @@ export class Comp1Component implements OnInit {
   constructor(private utility: UtilityService) {}
 
   ngOnInit() {}
-  changeUser(user1: any) {}
+  changeUser(user1: any) {
+    this.utility.changeUser(user1.value);
+  }
 }
