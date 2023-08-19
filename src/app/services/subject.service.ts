@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class SubjectService {
   constructor() {
-    this.userName.next('Suraj');
+    // this.userName.next('Suraj');
   }
 
-  userName = new Subject<string>();
+  userName = new BehaviorSubject<string>('suraj');
 }
