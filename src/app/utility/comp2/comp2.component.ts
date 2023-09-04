@@ -7,10 +7,13 @@ import { UtilityService } from '../utility.service';
   styleUrls: ['./comp2.component.css'],
 })
 export class Comp2Component implements OnInit {
-
-  constructor(private utility : UtilityService) {}
-
-  ngOnInit() {}
+  constructor(private utility: UtilityService) {}
+  user: string | undefined;
+  ngOnInit() {
+    this.utility.userName.subscribe((res) => {
+      this.user = res;
+    });
+  }
   changeUser(user2: any) {
     this.utility.changeUser(user2.value);
   }

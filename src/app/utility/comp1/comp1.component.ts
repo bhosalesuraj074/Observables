@@ -8,8 +8,12 @@ import { UtilityService } from '../utility.service';
 })
 export class Comp1Component implements OnInit {
   constructor(private utility: UtilityService) {}
-
-  ngOnInit() {}
+  user!: string;
+  ngOnInit() {
+    this.utility.userName.subscribe((res) => {
+      this.user = res;
+    });
+  }
   changeUser(user1: any) {
     this.utility.changeUser(user1.value);
   }
